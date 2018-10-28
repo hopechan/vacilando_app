@@ -16,15 +16,18 @@ class BotonSignIn extends  State<SignIn>{
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("VACILANDO"),
-        ),
-        body: new Center(
+        body: new Container(
+          decoration: new BoxDecoration(
+            image: new DecorationImage(
+              image: new AssetImage('images/fondo.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: new Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               new Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   new FlatButton.icon(
                     onPressed: signIn(),
@@ -39,7 +42,7 @@ class BotonSignIn extends  State<SignIn>{
                     label: new Text("Entrar con Facebook"),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         )
