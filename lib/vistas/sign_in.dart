@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class SignIn extends StatefulWidget{
   @override
   State<StatefulWidget> createState(){
@@ -17,35 +17,32 @@ class BotonSignIn extends  State<SignIn>{
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text("Raised Button"),
+          title: new Text("VACILANDO"),
         ),
         body: new Center(
           child: new Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new Row(
+              new Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  new RaisedButton(
-                    padding: const EdgeInsets.all(8.0),
-                    textColor: Colors.white,
-                    color: Colors.blue,
+                  new FlatButton.icon(
                     onPressed: signIn(),
-                    child: new Text("Google"),
+                    icon: new Icon(FontAwesomeIcons.google),
+                    label: new Text("Entrar con Google"),
                   ),
-                  new RaisedButton(
+                  new FlatButton.icon(
                     onPressed: signIn(),
                     textColor: Colors.white,
                     color: Colors.red,
-                    padding: const EdgeInsets.all(8.0),
-                    child: new Text(
-                      "Facebook",
-                ),
-              ),
+                    icon: new Icon(FontAwesomeIcons.facebook),
+                    label: new Text("Entrar con Facebook"),
+                  ),
+                ],
+              )
             ],
-          )
-        ],
-      ),
-    ));
-  }
+          ),
+        )
+      );
+    }
 }
