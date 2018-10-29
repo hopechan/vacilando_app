@@ -4,6 +4,7 @@ import "package:http/http.dart" as http;
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:vacilando_app/vistas/home.dart';
 
 GoogleSignIn _googleSignIn = GoogleSignIn(
   scopes: <String>[
@@ -97,28 +98,7 @@ class SignInState extends State<SignIn> {
 
   Widget _buildBody() { 
     if (_currentUser != null) {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          ListTile(
-            leading: GoogleUserCircleAvatar(
-              identity: _currentUser,
-            ),
-            title: Text(_currentUser.displayName),
-            subtitle: Text(_currentUser.email),
-          ),
-          const Text("Signed in successfully."),
-          Text(_contactText),
-          RaisedButton(
-            child: const Text('Salir'),
-            onPressed: _handleSignOut,
-          ),
-          RaisedButton(
-            child: const Text('Refrescar'),
-            onPressed: _handleGetContact,
-          ),
-        ],
-      );
+      return HomeState().build(context);
     } else {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
