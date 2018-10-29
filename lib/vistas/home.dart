@@ -9,28 +9,6 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  void _alerta(String value){
-    AlertDialog dialog = new AlertDialog(
-      title: new Text("Ha presionado $value"),
-      actions: <Widget>[
-        new FlatButton(
-          child: new Text("OK"),
-          onPressed: (){
-            Navigator.pop(context);
-          },
-        )
-      ],
-    );
-    mostrarDialogo(context: context, child: dialog);
-  }
-  void mostrarDialogo<T>({BuildContext context, Widget child}){
-    showDialog<T>(
-      context: context,
-      builder: (BuildContext context) => child,
-    ).then<void>((T value){
-    });
-  }
-
   @override
   Widget build(BuildContext context){
     return new MaterialApp(
@@ -45,14 +23,10 @@ class HomeState extends State<Home> {
                 Tab(icon: Icon(FontAwesomeIcons.walking))
               ],
             ),
-            title: Text("Ejemplo $dato"),
           ),
           body: TabBarView(
             children: <Widget>[
-              IconButton(onPressed: (){
-                _alerta("Carro");
-              },
-              icon: Icon(FontAwesomeIcons.bus)),
+              Icon(FontAwesomeIcons.bus),
               Icon(FontAwesomeIcons.taxi),
               Icon(FontAwesomeIcons.walking)
             ],
