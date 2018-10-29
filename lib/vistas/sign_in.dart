@@ -9,43 +9,53 @@ class SignIn extends StatefulWidget{
 
 class BotonSignIn extends  State<SignIn>{
 
-  signIn(){
-
-  }
-
+  signIn(){}
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        body: new Container(
-          decoration: new BoxDecoration(
-            image: new DecorationImage(
-              image: new AssetImage('images/fondo.jpg'),
-              fit: BoxFit.cover,
+      body: new Stack(
+        children: <Widget>[
+          new Container(
+            decoration: new BoxDecoration(
+              image: new DecorationImage(image: new AssetImage("images/fondo.jpg"), fit: BoxFit.cover,),
             ),
           ),
-          child: new Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              new Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  new FlatButton.icon(
-                    onPressed: signIn(),
-                    icon: new Icon(FontAwesomeIcons.google),
-                    label: new Text("Entrar con Google"),
-                  ),
-                  new FlatButton.icon(
-                    onPressed: signIn(),
-                    textColor: Colors.white,
-                    color: Colors.red,
-                    icon: new Icon(FontAwesomeIcons.facebook),
-                    label: new Text("Entrar con Facebook"),
-                  ),
-                ],
-              ),
-            ],
+          new Center(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    new RaisedButton.icon(
+                      onPressed: signIn(),
+                      textColor: Colors.black,
+                      color: Colors.black,
+                      icon: new Icon(FontAwesomeIcons.google, color: Colors.redAccent),
+                      label: new Text("Entrar con Google     ", 
+                        style: new TextStyle(
+                          color: Colors.black
+                        ),
+                      ),
+                    ),
+                    new RaisedButton.icon(
+                      onPressed: signIn(),
+                      textColor: Colors.black,
+                      color: Colors.black,
+                      icon: new Icon(FontAwesomeIcons.facebook, color: Colors.blueAccent,),
+                      label: new Text("Entrar con Facebook",
+                        style: new TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-        )
-      );
-    }
+        ],
+      ),
+    );
+  }
 }

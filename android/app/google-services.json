@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "817955144811",
+    "firebase_url": "https://vacilando-app.firebaseio.com",
+    "project_id": "vacilando-app",
+    "storage_bucket": "vacilando-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817955144811:android:b53282a202206247",
+        "android_client_info": {
+          "package_name": "com.example.vacilandoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817955144811-06upmkt361b1h8tnv9q7d6jeq7ntjvhh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vacilandoapp",
+            "certificate_hash": "d663ad4b04fe0e2097a09baeed87597ac291a83a"
+          }
+        },
+        {
+          "client_id": "817955144811-t2n7db26ju0c2q2qrl07entvls05rih9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzszq18-F5IILXoMSlJ_zHvDsFjJOrRIQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817955144811-t2n7db26ju0c2q2qrl07entvls05rih9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
