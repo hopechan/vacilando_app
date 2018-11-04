@@ -6,14 +6,18 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vacilando_app/vistas/home.dart';
 
+/*
+ *En un futuro no muy lejano van a estar separados 
+ *las dos formas de entrar a la aplicacion 
+ */
+
+//Sign In para google
 GoogleSignIn _googleSignIn = GoogleSignIn(
   scopes: <String>[
     'email',
     'https://www.googleapis.com/auth/contacts.readonly',
   ],
 );
-
-
 
 class SignIn extends StatefulWidget {
   @override
@@ -84,7 +88,7 @@ class SignInState extends State<SignIn> {
     return null;
   }
 
-  Future<void> _handleSignIn() async {
+  Future<void> _signInGoogle() async {
     try {
       await _googleSignIn.signIn();
     } catch (error) {
@@ -92,10 +96,19 @@ class SignInState extends State<SignIn> {
     }
   }
 
-  Future<void> _handleSignOut() async {
+  Future<void> _signOutGoogle() async {
     _googleSignIn.disconnect();
   }
 
+  /*
+  *SignIn para Facebook
+  */
+  _signInFacebook(){
+
+  }
+
+
+//Widget donde estan los dos metodos signIn
   Widget _buildBody() { 
     if (_currentUser != null) {
       return HomeState().build(context);
@@ -104,17 +117,32 @@ class SignInState extends State<SignIn> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           new Container(
-            alignment: new Alignment(0.0 ,0.0),
+            alignment: new Alignment(0.0 ,2.0),
             child: RaisedButton.icon(
-              onPressed: _handleSignIn,
-              textColor: Colors.black,
-              color: Colors.white,
-              icon: new Icon(FontAwesomeIcons.google, color: Colors.redAccent),
+              onPressed: _signInGoogle,
+              textColor: Colors.white,
+              color: Colors.redAccent,
+              icon: new Icon(FontAwesomeIcons.google, color: Colors.white),
               label: new Text(
-                " Entrar con Google",
+                " Entrar con Google    ",
                 style: new TextStyle(
-                color: Colors.black
+                color: Colors.white
                 )
+              ),
+            ),
+          ),
+          new Container(
+            alignment: new Alignment(0.0, 2.0),
+            child: RaisedButton.icon(
+              onPressed: _signInFacebook,
+              textColor: Colors.white,
+              color: Colors.blueAccent,
+              icon: new Icon(FontAwesomeIcons.facebook, color: Colors.white),
+              label: new Text(
+                "Entrar con Facebook",
+                style: new TextStyle(
+                  color: Colors.white
+                ),
               ),
             ),
           ),
