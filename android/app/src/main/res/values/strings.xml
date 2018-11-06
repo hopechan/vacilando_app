@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">vacilando App</string>
+    <string name="android">Android</string>
+    <string name="facebook_app_id">348218235928224</string> 
+    <string name="fb_login_protocol_scheme">fb407453156441819</string>
+</resources>
